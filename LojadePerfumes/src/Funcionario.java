@@ -1,9 +1,10 @@
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.Id;
 
 @Entity
-@Table (name = "Funcionario")
 public class Funcionario {
+	
+	@Id
 	public int id;
 	public String nome;
 	public String contrato;

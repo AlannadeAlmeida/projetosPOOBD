@@ -1,9 +1,10 @@
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.Id;
 
 @Entity
-@Table (name = "Entrega")
 public class Entrega {
+	
+	@Id
 	public int id;
 	public String frete;
 	public String correio;

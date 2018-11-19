@@ -1,9 +1,10 @@
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.Id;
 
 @Entity
-@Table (name = "Categoria")
 public class Categoria {
+	
+	@Id
 	public int id;
 	public String perfume;
 	public String colonias;

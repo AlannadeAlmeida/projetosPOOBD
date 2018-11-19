@@ -22,4 +22,5 @@ public interface Pf {
 	
 	public ArrayList<Perfume> quantidade(Loja loja);
 	
+	
 }
