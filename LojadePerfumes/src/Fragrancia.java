@@ -1,4 +1,8 @@
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table (name = "Fragrancia")
 public class Fragrancia {
 	public int id;
 	public String fetos;

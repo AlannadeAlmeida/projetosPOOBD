@@ -6,7 +6,7 @@ public interface Pf {
 	
 	public ArrayList<Cliente> compra(Cliente cliente);
 	
-	public Entrega entrega (Cliente cliente, Perfume perfume);
+	public ArrayList<Entrega> perfumes (Cliente cliente);
 	
 	public Perfume perfume (Classificacao cassificacao, Fragrancia fragrancia);
 	
@@ -16,5 +16,10 @@ public interface Pf {
 	
 	public ArrayList<Cliente>compram(Perfume perfume);
 	
+	public Financiamento financiamento (Cliente cliente,Loja loja);
+	
+	public Categoria categoria(Perfume perfume);
+	
+	public ArrayList<Perfume> quantidade(Loja loja);
 	
 }
