@@ -1,5 +1,7 @@
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Financiamento {
@@ -8,6 +10,9 @@ public class Financiamento {
 	public int id;
 	public long conta;
 	public String empresa;
+	@ManyToOne
+	@JoinColumn(name="id_empresa")
+	private Empresa empresa1;
 	public Cliente cliente;
 	public int getId() {
 		return id;

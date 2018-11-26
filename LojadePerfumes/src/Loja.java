@@ -1,5 +1,7 @@
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Loja {
@@ -9,8 +11,17 @@ public class Loja {
 	public String rua;
 	public String bairro;
 	public String endereco;
+	@ManyToOne
+	@JoinColumn(name="id_endereco")
+	private  Loja loja1;
 	public Perfume perfume;
+	@ManyToOne
+	@JoinColumn(name="id_perfume")
+	private Perfume perfume1;
 	public Financiamento financiamento;
+	@ManyToOne
+	@JoinColumn(name="id_financiamento")
+	private Financiamento financiamento1;
 	public Funcionario funcionario;
 	public int getId() {
 		return id;

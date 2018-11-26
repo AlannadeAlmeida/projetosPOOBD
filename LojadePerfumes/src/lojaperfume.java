@@ -1,12 +1,20 @@
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class lojaperfume {
 	
 	@Id
 	public int id;
+	@ManyToOne
+	@JoinColumn(name = "id")
+	private Id id1;
 	public Loja loja;
+	@ManyToOne
+	@JoinColumn(name = "id_loja")
+	private Loja loja1;
 	public Perfume perfume;
 	public int getId() {
 		return id;
