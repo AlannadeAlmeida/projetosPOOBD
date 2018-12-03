@@ -2,16 +2,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Entrega {
+public class Entrega implements Identificavel {
 	
 	@Id
-	public int id;
+	public Long id;
 	public String frete;
 	public String correio;
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getFrete() {
@@ -32,7 +32,7 @@ public class Entrega {
 		int result = 1;
 		result = prime * result + ((correio == null) ? 0 : correio.hashCode());
 		result = prime * result + ((frete == null) ? 0 : frete.hashCode());
-		result = prime * result + id;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 	@Override
@@ -54,7 +54,10 @@ public class Entrega {
 				return false;
 		} else if (!frete.equals(other.frete))
 			return false;
-		if (id != other.id)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
@@ -62,13 +65,10 @@ public class Entrega {
 	public String toString() {
 		return "Entrega [id=" + id + ", frete=" + frete + ", correio=" + correio + "]";
 	}
-	public Entrega(int id, String frete, String correio) {
+	public Entrega(Long id, String frete, String correio) {
 		super();
 		this.id = id;
 		this.frete = frete;
 		this.correio = correio;
 	}
-	
-	
-
 }

@@ -2,10 +2,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Perfume {
+public class Perfume implements Identificavel{
 	
 	@Id
-	public int id;
+	public Long id;
 	public int preco;
 	public String qualidade;
 	public String marca;
@@ -13,10 +13,10 @@ public class Perfume {
 	public Categoria categoria;
 	public Fragrancia fragrancia;
 	public Classificacao classificacao;
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public int getPreco() {
@@ -68,7 +68,7 @@ public class Perfume {
 		result = prime * result + ((categoria == null) ? 0 : categoria.hashCode());
 		result = prime * result + ((classificacao == null) ? 0 : classificacao.hashCode());
 		result = prime * result + ((fragrancia == null) ? 0 : fragrancia.hashCode());
-		result = prime * result + id;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + idade;
 		result = prime * result + ((marca == null) ? 0 : marca.hashCode());
 		result = prime * result + preco;
@@ -99,7 +99,10 @@ public class Perfume {
 				return false;
 		} else if (!fragrancia.equals(other.fragrancia))
 			return false;
-		if (id != other.id)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		if (idade != other.idade)
 			return false;
@@ -123,7 +126,7 @@ public class Perfume {
 				+ idade + ", categoria=" + categoria + ", fragrancia=" + fragrancia + ", classificacao=" + classificacao
 				+ "]";
 	}
-	public Perfume(int id, int preco, String qualidade, String marca, int idade, Categoria categoria,
+	public Perfume(Long id, int preco, String qualidade, String marca, int idade, Categoria categoria,
 			Fragrancia fragrancia, Classificacao classificacao) {
 		super();
 		this.id = id;
@@ -135,5 +138,7 @@ public class Perfume {
 		this.fragrancia = fragrancia;
 		this.classificacao = classificacao;
 	}
-	
+	public Perfume() {
+		// TODO Auto-generated constructor stub
+	}
 }

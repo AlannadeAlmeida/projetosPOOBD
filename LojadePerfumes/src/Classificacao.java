@@ -2,17 +2,17 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Classificacao {
+public class Classificacao implements Identificavel{
 	
 	@Id
-	public int id;
+	public Long id;
 	public String base;
 	public String cabeça;
 	public String corpo;
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getBase() {
@@ -40,7 +40,7 @@ public class Classificacao {
 		result = prime * result + ((base == null) ? 0 : base.hashCode());
 		result = prime * result + ((cabeça == null) ? 0 : cabeça.hashCode());
 		result = prime * result + ((corpo == null) ? 0 : corpo.hashCode());
-		result = prime * result + id;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 	@Override
@@ -67,7 +67,10 @@ public class Classificacao {
 				return false;
 		} else if (!corpo.equals(other.corpo))
 			return false;
-		if (id != other.id)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
@@ -75,12 +78,12 @@ public class Classificacao {
 	public String toString() {
 		return "Classificacao [id=" + id + ", base=" + base + ", cabeça=" + cabeça + ", corpo=" + corpo + "]";
 	}
-	public Classificacao(int id, String base, String cabeça, String corpo) {
+	public Classificacao(Long id, String base, String cabeça, String corpo) {
 		super();
 		this.id = id;
 		this.base = base;
 		this.cabeça = cabeça;
 		this.corpo = corpo;
 	}
-	
 }
+	

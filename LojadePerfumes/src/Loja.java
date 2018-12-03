@@ -4,10 +4,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Loja {
+public class Loja implements Identificavel {
 	
 	@Id
-	public int id;
+	public Long id;
+	public String nome;
 	public String rua;
 	public String bairro;
 	public String endereco;
@@ -23,11 +24,18 @@ public class Loja {
 	@JoinColumn(name="id_financiamento")
 	private Financiamento financiamento1;
 	public Funcionario funcionario;
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	public String getRua() {
 		return rua;
@@ -47,11 +55,23 @@ public class Loja {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+	public Loja getLoja1() {
+		return loja1;
+	}
+	public void setLoja1(Loja loja1) {
+		this.loja1 = loja1;
+	}
 	public Perfume getPerfume() {
 		return perfume;
 	}
 	public void setPerfume(Perfume perfume) {
 		this.perfume = perfume;
+	}
+	public Perfume getPerfume1() {
+		return perfume1;
+	}
+	public void setPerfume1(Perfume perfume1) {
+		this.perfume1 = perfume1;
 	}
 	public Financiamento getFinanciamento() {
 		return financiamento;
@@ -59,11 +79,18 @@ public class Loja {
 	public void setFinanciamento(Financiamento financiamento) {
 		this.financiamento = financiamento;
 	}
-	public Funcionario getFunciomario() {
+	public Financiamento getFinanciamento1() {
+		return financiamento1;
+	}
+	public void setFinanciamento1(Financiamento financiamento1) {
+		this.financiamento1 = financiamento1;
+	}
+	
+	public Funcionario getFuncionario() {
 		return funcionario;
 	}
-	public void setFunciomario(Funcionario funciomario) {
-		this.funcionario = funciomario;
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
 	}
 	@Override
 	public int hashCode() {
@@ -72,9 +99,13 @@ public class Loja {
 		result = prime * result + ((bairro == null) ? 0 : bairro.hashCode());
 		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
 		result = prime * result + ((financiamento == null) ? 0 : financiamento.hashCode());
+		result = prime * result + ((financiamento1 == null) ? 0 : financiamento1.hashCode());
 		result = prime * result + ((funcionario == null) ? 0 : funcionario.hashCode());
-		result = prime * result + id;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((loja1 == null) ? 0 : loja1.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((perfume == null) ? 0 : perfume.hashCode());
+		result = prime * result + ((perfume1 == null) ? 0 : perfume1.hashCode());
 		result = prime * result + ((rua == null) ? 0 : rua.hashCode());
 		return result;
 	}
@@ -102,17 +133,40 @@ public class Loja {
 				return false;
 		} else if (!financiamento.equals(other.financiamento))
 			return false;
+		if (financiamento1 == null) {
+			if (other.financiamento1 != null)
+				return false;
+		} else if (!financiamento1.equals(other.financiamento1))
+			return false;
 		if (funcionario == null) {
 			if (other.funcionario != null)
 				return false;
 		} else if (!funcionario.equals(other.funcionario))
 			return false;
-		if (id != other.id)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (loja1 == null) {
+			if (other.loja1 != null)
+				return false;
+		} else if (!loja1.equals(other.loja1))
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
 			return false;
 		if (perfume == null) {
 			if (other.perfume != null)
 				return false;
 		} else if (!perfume.equals(other.perfume))
+			return false;
+		if (perfume1 == null) {
+			if (other.perfume1 != null)
+				return false;
+		} else if (!perfume1.equals(other.perfume1))
 			return false;
 		if (rua == null) {
 			if (other.rua != null)
@@ -123,21 +177,8 @@ public class Loja {
 	}
 	@Override
 	public String toString() {
-		return "Loja [id=" + id + ", rua=" + rua + ", bairro=" + bairro + ", endereco=" + endereco + ", perfume="
-				+ perfume + ", financiamento=" + financiamento + ", funciomario=" + funcionario + "]";
+		return "Loja [id=" + id + ", nome=" + nome + ", rua=" + rua + ", bairro=" + bairro + ", endereco=" + endereco
+				+ ", loja1=" + loja1 + ", perfume=" + perfume + ", perfume1=" + perfume1 + ", financiamento="
+				+ financiamento + ", financiamento1=" + financiamento1 + ", funcionario=" + funcionario + "]";
 	}
-	public Loja(int id, String rua, String bairro, String endereco, Perfume perfume, Financiamento financiamento,
-			Funcionario funciomario, Funcionario funcionario) {
-		super();
-		this.id = id;
-		this.rua = rua;
-		this.bairro = bairro;
-		this.endereco = endereco;
-		this.perfume = perfume;
-		this.financiamento = financiamento;
-		this.funcionario = funcionario;
-	}
-	
-	
-	
 }

@@ -4,21 +4,23 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Funcionario {
+public class Funcionario implements Identificavel{
 	
 	@Id
-	public int id;
+	public Long id;
 	public String nome;
 	public String contrato;
 	public long cpf;
 	@ManyToOne
 	@JoinColumn(name="id_cpf")
 	private Funcionario funcionario1;
+	
+	
 	public Entrega entraga;
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNome() {
@@ -39,6 +41,12 @@ public class Funcionario {
 	public void setCpf(long cpf) {
 		this.cpf = cpf;
 	}
+	public Funcionario getFuncionario1() {
+		return funcionario1;
+	}
+	public void setFuncionario1(Funcionario funcionario1) {
+		this.funcionario1 = funcionario1;
+	}
 	public Entrega getEntraga() {
 		return entraga;
 	}
@@ -52,7 +60,8 @@ public class Funcionario {
 		result = prime * result + ((contrato == null) ? 0 : contrato.hashCode());
 		result = prime * result + (int) (cpf ^ (cpf >>> 32));
 		result = prime * result + ((entraga == null) ? 0 : entraga.hashCode());
-		result = prime * result + id;
+		result = prime * result + ((funcionario1 == null) ? 0 : funcionario1.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
@@ -77,7 +86,15 @@ public class Funcionario {
 				return false;
 		} else if (!entraga.equals(other.entraga))
 			return false;
-		if (id != other.id)
+		if (funcionario1 == null) {
+			if (other.funcionario1 != null)
+				return false;
+		} else if (!funcionario1.equals(other.funcionario1))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		if (nome == null) {
 			if (other.nome != null)
@@ -88,18 +105,17 @@ public class Funcionario {
 	}
 	@Override
 	public String toString() {
-		return "Funcionario [id=" + id + ", nome=" + nome + ", contrato=" + contrato + ", cpf=" + cpf + ", entraga="
-				+ entraga + "]";
+		return "Funcionario [id=" + id + ", nome=" + nome + ", contrato=" + contrato + ", cpf=" + cpf
+				+ ", funcionario1=" + funcionario1 + ", entraga=" + entraga + "]";
 	}
-	public Funcionario(int id, String nome, String contrato, long cpf, Entrega entraga) {
+	public Funcionario(Long id, String nome, String contrato, long cpf, Funcionario funcionario1, Entrega entraga) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.contrato = contrato;
 		this.cpf = cpf;
+		this.funcionario1 = funcionario1;
 		this.entraga = entraga;
 	}
-
 	
-
 }

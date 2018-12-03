@@ -2,10 +2,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Fragrancia {
+public class Fragrancia implements Identificavel {
 	
 	@Id
-	public int id;
+	public Long id;
 	public String fetos;
 	public String florais;
 	public String citricos;
@@ -13,10 +13,10 @@ public class Fragrancia {
 	public String orientais;
 	public String couros;
 	public String amadeirados;
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getFetos() {
@@ -71,7 +71,7 @@ public class Fragrancia {
 		result = prime * result + ((couros == null) ? 0 : couros.hashCode());
 		result = prime * result + ((fetos == null) ? 0 : fetos.hashCode());
 		result = prime * result + ((florais == null) ? 0 : florais.hashCode());
-		result = prime * result + id;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((orientais == null) ? 0 : orientais.hashCode());
 		return result;
 	}
@@ -114,7 +114,10 @@ public class Fragrancia {
 				return false;
 		} else if (!florais.equals(other.florais))
 			return false;
-		if (id != other.id)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		if (orientais == null) {
 			if (other.orientais != null)
@@ -129,7 +132,7 @@ public class Fragrancia {
 				+ ", chipre=" + chipre + ", orientais=" + orientais + ", couros=" + couros + ", amadeirados="
 				+ amadeirados + "]";
 	}
-	public Fragrancia(int id, String fetos, String florais, String citricos, String chipre, String orientais,
+	public Fragrancia(Long id, String fetos, String florais, String citricos, String chipre, String orientais,
 			String couros, String amadeirados) {
 		super();
 		this.id = id;
@@ -141,8 +144,4 @@ public class Fragrancia {
 		this.couros = couros;
 		this.amadeirados = amadeirados;
 	}
-	
-	
-	
-
 }
