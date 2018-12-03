@@ -1,6 +1,9 @@
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class Empresa implements Identificavel{
-	
+	@Id
 	public Long id;
 	public String nome;
 	public Long getId() {

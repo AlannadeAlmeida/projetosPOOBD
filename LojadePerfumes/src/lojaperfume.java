@@ -8,13 +8,10 @@ public class lojaperfume {
 	
 	@Id
 	public int id;
-	@ManyToOne
-	@JoinColumn(name = "id")
-	private Id id1;
-	public Loja loja;
+
 	@ManyToOne
 	@JoinColumn(name = "id_loja")
-	private Loja loja1;
+	private Loja loja;
 	@ManyToOne
 	@JoinColumn(name="id_perfume")
 	public Perfume perfume;
@@ -72,11 +69,6 @@ public class lojaperfume {
 	public String toString() {
 		return "lojaperfume [id=" + id + ", loja=" + loja + ", perfume=" + perfume + "]";
 	}
-	public lojaperfume(int id, Loja loja, Perfume perfume) {
-		super();
-		this.id = id;
-		this.loja = loja;
-		this.perfume = perfume;
-	}
+	
 
 }
