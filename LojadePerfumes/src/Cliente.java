@@ -1,5 +1,7 @@
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Cliente implements Identificavel{
@@ -11,6 +13,8 @@ public class Cliente implements Identificavel{
 	public String bairro;
 	public  int numero;
 	private long cpf;
+	@ManyToOne
+	@JoinColumn(name="id_entrega")
 	public Entrega entrega;
 	public Long getId() {
 		return id;

@@ -14,9 +14,9 @@ public class Funcionario implements Identificavel{
 	@ManyToOne
 	@JoinColumn(name="id_cpf")
 	private Funcionario funcionario1;
-	
-	
-	public Entrega entraga;
+	@ManyToOne
+	@JoinColumn(name="id_etrega")
+	public Entrega entrega;
 	public Long getId() {
 		return id;
 	}
@@ -48,10 +48,10 @@ public class Funcionario implements Identificavel{
 		this.funcionario1 = funcionario1;
 	}
 	public Entrega getEntraga() {
-		return entraga;
+		return entrega;
 	}
 	public void setEntraga(Entrega entraga) {
-		this.entraga = entraga;
+		this.entrega = entraga;
 	}
 	@Override
 	public int hashCode() {
@@ -59,7 +59,7 @@ public class Funcionario implements Identificavel{
 		int result = 1;
 		result = prime * result + ((contrato == null) ? 0 : contrato.hashCode());
 		result = prime * result + (int) (cpf ^ (cpf >>> 32));
-		result = prime * result + ((entraga == null) ? 0 : entraga.hashCode());
+		result = prime * result + ((entrega == null) ? 0 : entrega.hashCode());
 		result = prime * result + ((funcionario1 == null) ? 0 : funcionario1.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
@@ -81,10 +81,10 @@ public class Funcionario implements Identificavel{
 			return false;
 		if (cpf != other.cpf)
 			return false;
-		if (entraga == null) {
-			if (other.entraga != null)
+		if (entrega == null) {
+			if (other.entrega != null)
 				return false;
-		} else if (!entraga.equals(other.entraga))
+		} else if (!entrega.equals(other.entrega))
 			return false;
 		if (funcionario1 == null) {
 			if (other.funcionario1 != null)
@@ -106,7 +106,7 @@ public class Funcionario implements Identificavel{
 	@Override
 	public String toString() {
 		return "Funcionario [id=" + id + ", nome=" + nome + ", contrato=" + contrato + ", cpf=" + cpf
-				+ ", funcionario1=" + funcionario1 + ", entraga=" + entraga + "]";
+				+ ", funcionario1=" + funcionario1 + ", entraga=" + entrega + "]";
 	}
 	public Funcionario(Long id, String nome, String contrato, long cpf, Funcionario funcionario1, Entrega entraga) {
 		super();
@@ -115,7 +115,7 @@ public class Funcionario implements Identificavel{
 		this.contrato = contrato;
 		this.cpf = cpf;
 		this.funcionario1 = funcionario1;
-		this.entraga = entraga;
+		this.entrega = entraga;
 	}
 	
 }

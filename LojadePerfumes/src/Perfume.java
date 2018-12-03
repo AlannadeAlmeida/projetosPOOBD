@@ -1,5 +1,7 @@
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Perfume implements Identificavel{
@@ -10,8 +12,14 @@ public class Perfume implements Identificavel{
 	public String qualidade;
 	public String marca;
 	public int idade;
+	@ManyToOne
+	@JoinColumn(name="id_categoria")
 	public Categoria categoria;
+	@ManyToOne
+	@JoinColumn(name="id_fragrancia")
 	public Fragrancia fragrancia;
+	@ManyToOne
+	@JoinColumn(name="id_classificacao")
 	public Classificacao classificacao;
 	public Long getId() {
 		return id;

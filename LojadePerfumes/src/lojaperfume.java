@@ -15,6 +15,8 @@ public class lojaperfume {
 	@ManyToOne
 	@JoinColumn(name = "id_loja")
 	private Loja loja1;
+	@ManyToOne
+	@JoinColumn(name="id_perfume")
 	public Perfume perfume;
 	public int getId() {
 		return id;

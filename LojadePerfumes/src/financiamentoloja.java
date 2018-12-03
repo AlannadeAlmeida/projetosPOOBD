@@ -12,7 +12,8 @@ public class financiamentoloja implements Identificavel{
 	@ManyToOne
 	@JoinColumn(name = "id_financiamento")
 	private Financiamento financiamento;
-	
+	@ManyToOne
+	@JoinColumn(name="id_loja")
 	public Loja loja;
 	public Long getId() {
 		return id;

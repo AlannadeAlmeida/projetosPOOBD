@@ -15,6 +15,8 @@ public class funcionarioentrega implements Identificavel{
 	@ManyToOne
 	@JoinColumn(name = "id_funcionario")
 	private Funcionario funcionario1;
+	@ManyToOne
+	@JoinColumn(name="id_entrega")
 	public Entrega entrega;
 	public Long getId() {
 		return id;
