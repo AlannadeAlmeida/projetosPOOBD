@@ -78,12 +78,5 @@ public class Classificacao implements Identificavel{
 	public String toString() {
 		return "Classificacao [id=" + id + ", base=" + base + ", cabeça=" + cabeça + ", corpo=" + corpo + "]";
 	}
-	public Classificacao(Long id, String base, String cabeça, String corpo) {
-		super();
-		this.id = id;
-		this.base = base;
-		this.cabeça = cabeça;
-		this.corpo = corpo;
-	}
 }
 	

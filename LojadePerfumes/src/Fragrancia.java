@@ -131,17 +131,6 @@ public class Fragrancia implements Identificavel {
 		return "Fragrancia [id=" + id + ", fetos=" + fetos + ", florais=" + florais + ", citricos=" + citricos
 				+ ", chipre=" + chipre + ", orientais=" + orientais + ", couros=" + couros + ", amadeirados="
 				+ amadeirados + "]";
-	}
-	public Fragrancia(Long id, String fetos, String florais, String citricos, String chipre, String orientais,
-			String couros, String amadeirados) {
-		super();
-		this.id = id;
-		this.fetos = fetos;
-		this.florais = florais;
-		this.citricos = citricos;
-		this.chipre = chipre;
-		this.orientais = orientais;
-		this.couros = couros;
-		this.amadeirados = amadeirados;
+
 	}
 }

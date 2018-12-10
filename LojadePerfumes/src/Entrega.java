@@ -65,10 +65,4 @@ public class Entrega implements Identificavel {
 	public String toString() {
 		return "Entrega [id=" + id + ", frete=" + frete + ", correio=" + correio + "]";
 	}
-	public Entrega(Long id, String frete, String correio) {
-		super();
-		this.id = id;
-		this.frete = frete;
-		this.correio = correio;
-	}
 }

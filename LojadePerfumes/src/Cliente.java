@@ -116,14 +116,5 @@ public class Cliente implements Identificavel{
 		return "Cliente [id=" + id + ", endereco=" + endereco + ", rua=" + rua + ", bairro=" + bairro + ", numero="
 				+ numero + ", cpf=" + cpf + ", entrega=" + entrega + "]";
 	}
-	public Cliente(Long id, String endereco, String rua, String bairro, int numero, long cpf, Entrega entrega) {
-		super();
-		this.id = id;
-		this.endereco = endereco;
-		this.rua = rua;
-		this.bairro = bairro;
-		this.numero = numero;
-		this.cpf = cpf;
-		this.entrega = entrega;
-	}
+	
 }

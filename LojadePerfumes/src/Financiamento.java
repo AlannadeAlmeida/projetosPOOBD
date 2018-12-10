@@ -8,7 +8,7 @@ public class Financiamento implements Identificavel{
 	
 	@Id
 	public Long id;
-	public long conta;
+	public String conta;
 	
 	@ManyToOne
 	@JoinColumn(name="id_empresa")
@@ -45,10 +45,10 @@ public class Financiamento implements Identificavel{
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public long getConta() {
+	public String getConta() {
 		return conta;
 	}
-	public void setConta(long conta) {
+	public void setConta(String conta) {
 		this.conta = conta;
 	}
 	

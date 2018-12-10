@@ -106,13 +106,5 @@ public class Categoria implements Identificavel {
 				+ ", aguadebanho=" + aguadebanho + "]";
 	}
 
-	public Categoria(Long id, String perfume, String colonias, String aguadoce, String aguadebanho) {
-		super();
-		this.id = id;
-		this.perfume = perfume;
-		this.colonias = colonias;
-		this.aguadoce = aguadoce;
-		this.aguadebanho = aguadebanho;
-	}
 	
 }

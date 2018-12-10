@@ -14,59 +14,59 @@ public class Main {
 		System.out.println(find.getNome());
 		
 		
-		DAO<Perfume> dao = new DAO<Perfume>();
-		Perfume p = new Perfume();
-		p.setId(22l);
-		p.setNome("");
-		dao.save(p);
+		DAO<Perfume> daoP = new DAO<Perfume>();
+		Perfume q = new Perfume();
+		q.setId(22l);
+		q.setMarca("");
+		daoP.save(q);
 		
-		DAO<Categiria> dao = new DAO<Categiria>();
-		Categiria p = new Categiria();
-		p.setId(22l);
-		p.setNome("");
-		dao.save(p);
+		DAO<Categoria> daoC = new DAO<Categoria>();
+		Categoria b = new Categoria();
+		b.setId(22l);
+		b.setColonias("");
+		daoC.save(b);
 		
-		DAO<Classificacao> dao = new DAO<Classificacao>();
-		Classificacao p = new Classificacao();
-		p.setId(22l);
-		p.setNome("");
-		dao.save(p);
+		DAO<Classificacao> daoD = new DAO<Classificacao>();
+		Classificacao s = new Classificacao();
+		s.setId(22l);
+		s.setBase("");
+		daoD.save(s);
 		
-		DAO<Cliente> dao = new DAO<Cliente>();
-		Cliente p = new Cliente();
-		p.setId(22l);
-		p.setNome("");
-		dao.save(p);
+		DAO<Cliente> daoX = new DAO<Cliente>();
+		Cliente f = new Cliente();
+		f.setId(22l);
+		f.setEndereco("");
+		daoX.save(f);
 		
-		DAO<Entrega> dao = new DAO<Entrega>();
-		Entrega p = new Entrega();
-		p.setId(22l);
-		p.setNome("");
-		dao.save(p);
+		DAO<Entrega> daoJ = new DAO<Entrega>();
+		Entrega d = new Entrega();
+		d.setId(22l);
+		d.setFrete("");
+		daoJ.save(d);
 		
-		DAO<Fragrancia> dao = new DAO<Fragrancia>();
-		Fragrancia p = new Fragrancia();
-		p.setId(22l);
-		p.setNome("");
-		dao.save(p);
+		DAO<Fragrancia> daoS = new DAO<Fragrancia>();
+		Fragrancia r = new Fragrancia();
+		r.setId(22l);
+		r.setFetos("");
+		daoS.save(r);
 		
-		DAO<Empresa> dao = new DAO<Empresa>();
-		Empresa p = new Empresa();
-		p.setId(22l);
-		p.setNome("");
-		dao.save(p);
+		DAO<Empresa> daoL = new DAO<Empresa>();
+		Empresa w = new Empresa();
+		w.setId(22l);
+		w.setNome("");
+		daoL.save(w);
 		
-		DAO<Funcionario> dao = new DAO<Funcionario>();
-		Funcionario p = new Funcionario();
-		p.setId(22l);
-		p.setNome("");
-		dao.save(p);
+		DAO<Funcionario> daoO= new DAO<Funcionario>();
+		Funcionario g = new Funcionario();
+		g.setId(22l);
+		g.setNome("");
+		daoO.save(g);
 		
-		DAO<Financiamento> dao = new DAO<Financiamento>();
-		Financiamento p = new Financiamento();
-		p.setId(22l);
-		p.setNome("");
-		dao.save(p);
+		DAO<Financiamento> daoK = new DAO<Financiamento>();
+		Financiamento a = new Financiamento();
+		a.setId(22l);
+		a.setConta("");
+		daoK.save(a);
 	}
 	
 }

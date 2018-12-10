@@ -108,14 +108,5 @@ public class Funcionario implements Identificavel{
 		return "Funcionario [id=" + id + ", nome=" + nome + ", contrato=" + contrato + ", cpf=" + cpf
 				+ ", funcionario1=" + funcionario1 + ", entraga=" + entrega + "]";
 	}
-	public Funcionario(Long id, String nome, String contrato, long cpf, Funcionario funcionario1, Entrega entraga) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.contrato = contrato;
-		this.cpf = cpf;
-		this.funcionario1 = funcionario1;
-		this.entrega = entraga;
-	}
 	
 }

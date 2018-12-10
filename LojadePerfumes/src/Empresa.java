@@ -51,9 +51,5 @@ public class Empresa implements Identificavel{
 	public String toString() {
 		return "Empresa [id=" + id + ", nome=" + nome + "]";
 	}
-	public Empresa(Long id, String nome) {
-		super();
-		this.id = id;
-		this.nome = nome;
-	}
+
 }

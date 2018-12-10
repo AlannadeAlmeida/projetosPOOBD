@@ -1,26 +1,27 @@
-import java.util.ArrayList;
 
 public interface Pf {
 	
-	public Funcionario funcionario(Cliente cliente, Loja loja);
+	public Funcionario cadastrarFuncionario(String contrato, long cpf , String nome) throws CPFInvalidoException;
 	
-	public ArrayList<Cliente> compra(Cliente cliente);
+	public Cliente cadastrarCliente(String endereco, long cpf , String rua , String bairro , int numero) throws CPFInvalidoException;
 	
-	public ArrayList<Entrega> perfumes (Cliente cliente);
+	public Perfume entregarPerfumes(String qualidade, long cpf , String marca , int idade , int preco) throws CPFInvalidoException;
 	
-	public Perfume perfume (Classificacao cassificacao, Fragrancia fragrancia);
+	public Perfume tipoPerfumes(String qualidade, long cpf , String marca , int idade , int preco) throws CPFInvalidoException;
 	
-	public ArrayList<Financiamento> financia (Loja loja, Perfume perfume);
+	public Financiamento perfumeFianciamento(String conta, Long id) throws IDInvalidoException;
 	
-	public ArrayList<Funcionario> trabalaham(Loja loja);
+	public Funcionario lojaFuncionaro (String contrato, long cpf , String nome) throws CPFInvalidoException;
 	
-	public ArrayList<Cliente>compram(Perfume perfume);
+	public Cliente perfumeCliente (String contrato, long cpf , String nome) throws CPFInvalidoException;
 	
-	public Financiamento financiamento (Cliente cliente,Loja loja);
+	public Categoria classificacaoCategoria (String perfume, String colonias , String aguadoce , String aguadebanho) throws PERFUMEInvalidoException; 
 	
-	public Categoria categoria(Perfume perfume);
+	public Perfume quantidadePerfumes(String qualidade, long cpf , String marca , int idade , int preco) throws CPFInvalidoException;
+
+	Funcionario cadastrarFuncionario(String contrato, Long cpf, String nome) throws CPFInvalidoException;
 	
-	public ArrayList<Perfume> quantidade(Loja loja);
+	
 	
 	
 }
