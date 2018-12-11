@@ -6,7 +6,7 @@ public class Lj implements Pf  {
 	public Funcionario cadastrarFuncionario(String contrato, Long cpf, String nome) throws CPFInvalidoException {
 		Funcionario funcionario = new Funcionario (); 
 		DAO<Funcionario> daoO= new DAO<Funcionario>();
-		if(cpf == null) {
+		if(cpf == null || cpf==0) {
 			throw new CPFInvalidoException();
 		}
 		return null;
@@ -80,19 +80,25 @@ public class Lj implements Pf  {
 			throw new CPFInvalidoException();
 		}
 		return null;
-		return null;
 	}
 
 	@Override
-	public Perfume quantidadePerfumes(String qualidade, long cpf, String marca, int idade, int preco)
-			throws CPFInvalidoException {
-		// TODO Auto-generated method stub
+	public Perfume quantidadePerfumes(String qualidade, long cpf, String marca, int idade, int preco) throws CPFInvalidoException {
+		Perfume perfume = new Perfume (); 
+		DAO<Perfume> daoP = new DAO<Perfume>();
+		if(cpf == null) {
+			throw new CPFInvalidoException();
+		}
 		return null;
 	}
 
 	@Override
 	public Funcionario cadastrarFuncionario(String contrato, long cpf, String nome) throws CPFInvalidoException {
-		// TODO Auto-generated method stub
+		Funcionario funcionario = new Funcionario (); 
+		DAO<Funcionario> daoO= new DAO<Funcionario>();
+		if(cpf == null) {
+			throw new CPFInvalidoException();
+		}
 		return null;
 	}
 	
