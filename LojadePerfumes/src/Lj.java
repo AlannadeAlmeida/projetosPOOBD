@@ -11,13 +11,6 @@ public class Lj implements Pf  {
 
 	@Override
 	public Cliente cadastrarCliente(String endereco, Long cpf, String rua, String bairro, int numero) throws CPFInvalidoException {
-		//Cliente cliente = new Cliente (); 
-		//DAO<Cliente> daoX = new DAO<Cliente>();
-		//if(cpf == null) {
-			//throw new CPFInvalidoException();
-		//}
-		//return null;
-	//}
 		    boolean cpfInvalido = false;
 			if (cpfInvalido) {
 		        System.out.println("cpf invalido");
